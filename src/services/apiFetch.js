@@ -8,7 +8,8 @@ const getDataApi = () => {
                         name: eachObject.name,
                         house: eachObject.house,
                         species: eachObject.species,
-                        image: eachObject.image || "https://ik.imagekit.io/hpapi/hermione.jpeg"
+                        image: eachObject.image || "https://ik.imagekit.io/hpapi/hermione.jpeg",
+                        id: eachObject.id
                     }
                 })
             return cleanData;
