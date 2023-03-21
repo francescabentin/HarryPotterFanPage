@@ -1,26 +1,40 @@
-/* SECCIÓN DE IMPORT */
+import "../styles/App.scss";
+import getDataApi from "../services/apiFetch";
+import { useEffect, useState } from "react";
+import RenderList from "./RenderList";
 
-// - De React
-// - Nuestros
-// - Sass
-import '../styles/App.scss';
-// - Imágenes
 
-/* SECCIÓN DEL COMPONENTE */
-function App() {
-  /* VARIABLES ESTADO (DATOS) */
 
-  /* EFECTOS (código cuando carga la página) */
+const App = () => {
 
-  /* FUNCIONES HANDLER */
+  const [charactersList, setCharacterList] = useState([]);
 
-  /* FUNCIONES Y VARIABLES AUXILIARES PARA PINTAR EL HTML */
 
-  /* HTML */
-  return <div className="App">{/* Aquí va el HTML */}</div>;
-}
+  useEffect(() => {
+    getDataApi().then((data) => {
+      setCharacterList(data);
+    });
+  }, []);
 
-/* PROP-TYPES */
 
-/* EXPORT DEL COMPONENTE */
+
+  return (
+    <div>
+      <h1>Harry Potter</h1>
+      <form>
+        <label>Buscar por personaje:</label> <input />
+        <label>Seleccionar la casa:</label>
+        <select>
+          <option>Grifindor</option>
+          <option>Hufflepuff</option>
+          <option>Slytherin</option>
+        </select>
+      </form>
+
+      <RenderList charactersList={charactersList} />
+
+    </div>
+  );
+};
+
 export default App;

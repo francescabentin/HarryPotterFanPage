@@ -1,1 +1,24 @@
-/* Aquí van tus estilos */
+* {
+    margin: 0;
+    box-sizing: border-box;
+    font-size: 20px;
+    padding: 20px;
+}
+
+form {
+    width: 80%;
+}
+
+select {
+    width: 300px;
+}
+
+ul {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+img {
+    width: 100px;
+}
