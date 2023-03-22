@@ -9,11 +9,13 @@ import CharacterDetail from "./CharacterDetail";
 import NotFound from './NotFound';
 
 
+
 const App = () => {
   // states
   const [charactersList, setCharacterList] = useState([]);
   const [search, setSearch] = useState('');
   const [house, setHouse] = useState('Gryffindor');
+  const [gender, setGender] = useState('');
   const [isLoading, setIsLoading] = useState(false);
 
   //getDataApi
@@ -32,13 +34,22 @@ const App = () => {
   const liftingSelect = (value) => {
     setHouse(value);
   }
+  const liftingGender = (value) => {
+    setGender(value);
+  }
+
 
   // renderFunctions
   const filteredList = charactersList
     .filter((eachChar) => {
       return search === null ? true : eachChar.name.toLocaleLowerCase().includes(search.toLocaleLowerCase())
     })
-    .sort((a, b) => a.name.localeCompare(b.name));
+    .sort((a, b) => a.name.localeCompare(b.name))
+    .filter((eachChar) => {
+      return gender === ''
+        ? true
+        : eachChar.gender === gender;
+    })
 
   // character detail
   const { pathname } = useLocation();
@@ -71,6 +82,8 @@ const App = () => {
                   search={search}
                   liftingSelect={liftingSelect}
                   house={house}
+                  liftingGender={liftingGender}
+                  gender={gender}
                 />
                 <RenderList
                   charactersList={filteredList}
