@@ -1,6 +1,7 @@
 import FilterByName from "./FilterByName";
 import FilterByHouse from "./FilterByHouse";
 import FiltersByGender from './FilterByGender';
+import '../styles/components/_filter.scss';
 
 const Filters = ({ liftingSearch, search, liftingSelect, house, liftingGender, gender }) => {
 
@@ -9,7 +10,7 @@ const Filters = ({ liftingSearch, search, liftingSelect, house, liftingGender, g
     }
 
     return (
-        <form onSubmit={handleSubmit}>
+        <form className="container" onSubmit={handleSubmit}>
             <FilterByName
                 liftingSearch={liftingSearch}
                 search={search}

@@ -1,25 +1,24 @@
-* {
-    margin: 0;
-    box-sizing: border-box;
-    font-size: 20px;
-    padding: 20px;
+@import 'core/variables';
+@import 'core/reset';
+@import 'core/mixins';
+
+/*@font-face {
+    font-family: 'Bluu Next';
+    src: url(../fonts/BluuNext-Bolditalic.otf) format('truetype');
+}
+@font-face {
+    font-family: 'Harry Potter';
+    src: url(../fonts/HARRYP__.TTF) format('truetype');
 }
 
-form {
-    width: 80%;
+*/
+
+.title {
+    padding: 30px;
+    font-size: 35px;
+    color: #f02a00;
+    text-align: center;
 }
 
-select {
-    width: 300px;
-}
 
-ul {
-    list-style: none;
-    display: flex;
-    flex-wrap: wrap;
-}
 
-img {
-    width: 100px;
-
-}

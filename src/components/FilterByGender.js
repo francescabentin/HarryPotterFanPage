@@ -6,7 +6,8 @@ const FilterByGender = ({ liftingGender, gender }) => {
     }
 
     return (
-        <>
+        <>   
+            <fieldset>  
             <label>F</label><input
                 onChange={handleGenderEvent}
                 checked={gender === 'female'}
@@ -23,6 +24,7 @@ const FilterByGender = ({ liftingGender, gender }) => {
                 id="male"
                 value="male"
             />
+            </fieldset> 
         </>
     )
 }

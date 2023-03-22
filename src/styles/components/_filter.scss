@@ -1,0 +1,42 @@
+// Estilos para el contenedor principal
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    max-width: 320px;
+    margin: 0 20px;
+
+
+    // Estilos para el primer campo de búsqueda
+    &:first-child {
+
+
+        label {
+            font-size: 15px;
+        }
+
+        input {
+            padding: 3px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+    }
+
+    // Estilos para el segundo campo de selección
+    &:last-child {
+        margin-left: 10px;
+
+        label {
+            margin-right: 10px;
+        }
+
+        select {
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+    }
+
+    // Estilos para el tercer campo de género
+}

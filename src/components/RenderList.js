@@ -1,5 +1,6 @@
 import Character from "./Character";
-import loadImage from './images/loading2.gif';
+import loadImage from '../images/loading2.gif';
+import '../styles/components/_renderGrid.scss';
 
 
 const RenderList = ({ charactersList, isLoading }) => {
@@ -19,7 +20,7 @@ const RenderList = ({ charactersList, isLoading }) => {
             {isLoading === true ? (
                 <img src={loadImage} alt="Imagen de un spinner indicando que los datos se están cargando" />
             ) : (
-                <ul> {charactersList.length === 0 ? message() : mainList()} </ul>
+                    <ul className="grid_container"> {charactersList.length === 0 ? message() : mainList()} </ul>
             )}
         </section>
     );

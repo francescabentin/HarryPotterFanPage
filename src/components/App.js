@@ -61,30 +61,29 @@ const App = () => {
   // character detail
   const { pathname } = useLocation();
   const dataUrl = matchPath("/character/:id", pathname);
+  const placeholder = {
+    name: 'NO EXISTE ESTE PERSONAJE',
+  }
 
   const getFoundChar = () => {
     if (dataUrl) {
       const charId = dataUrl.params.id;
       const foundChar = filteredList.find((char) => char.id === charId);
-      if (foundChar) {
-        return foundChar
-      } else {
-        return {};
-      }
+      return foundChar ? (foundChar) : placeholder;
     }
-  }
+  } 
 
 
   return (
     <>
-      <h1>Harry Potter</h1>
+      <h1 className="title">Harry Potter</h1>
       <main>
         <Routes>
           <Route
             path="/"
             element={
               <>
-                <Filters
+                <Filters 
                   liftingSearch={liftingSearch}
                   search={search}
                   liftingSelect={liftingSelect}
