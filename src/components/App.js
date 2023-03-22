@@ -5,30 +5,37 @@ import RenderList from "./RenderList";
 import Filters from "./Filters";
 
 
-
 const App = () => {
 
   const [charactersList, setCharacterList] = useState([]);
   const [search, setSearch] = useState('');
+  const [house, setHouse] = useState('Gryffindor');
 
 
   useEffect(() => {
-    getDataApi().then((data) => {
+    getDataApi(house).then((data) => {
       setCharacterList(data);
     });
-  }, []);
+  }, [house]);
 
   const liftingSearch = (value) => {
-    setSearch(value)
+    setSearch(value);
   }
 
+  const liftingSelect = (value) => {
+    setHouse(value);
+  }
+
+  const filteredList = charactersList.filter((eachChar) => {
+    return search === null ? true : eachChar.name.includes(search)
+  });
 
 
   return (
     <div>
       <h1>Harry Potter</h1>
-      <Filters liftingSearch={liftingSearch} search={search} />
-      <RenderList charactersList={charactersList} />
+      <Filters liftingSearch={liftingSearch} search={search} liftingSelect={liftingSelect} house={house} />
+      <RenderList charactersList={filteredList} />
     </div>
   );
 };
