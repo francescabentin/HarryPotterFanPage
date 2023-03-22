@@ -37,6 +37,13 @@ const App = () => {
   const liftingGender = (value) => {
     setGender(value);
   }
+  const handleReset = (ev) => {
+    ev.preventDefault();
+    setHouse('gryffindor')
+    setGender("");
+    setSearch('');
+
+  }
 
 
   // renderFunctions
@@ -85,6 +92,7 @@ const App = () => {
                   liftingGender={liftingGender}
                   gender={gender}
                 />
+                <button onClick={handleReset}>reset</button>
                 <RenderList
                   charactersList={filteredList}
                   isLoading={isLoading} />

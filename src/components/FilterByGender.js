@@ -7,7 +7,7 @@ const FilterByGender = ({ liftingGender, gender }) => {
 
     return (
         <>
-            <input
+            <label>F</label><input
                 onChange={handleGenderEvent}
                 checked={gender === 'female'}
                 type="radio"
@@ -15,7 +15,7 @@ const FilterByGender = ({ liftingGender, gender }) => {
                 id="female"
                 value="female"
             />
-            <input
+            <label>M</label><input
                 onChange={handleGenderEvent}
                 checked={gender === 'male'}
                 type="radio"
