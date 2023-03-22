@@ -8,7 +8,7 @@ const getDataApi = (house) => {
                         name: eachObject.name,
                         house: eachObject.house,
                         species: eachObject.species,
-                        image: eachObject.image || "https://ik.imagekit.io/hpapi/hermione.jpeg",
+                        image: eachObject.image || `https://via.placeholder.com/210x295/191825/ffffff/?text=${eachObject.name}`,
                         id: eachObject.id
                     }
                 })

@@ -1,25 +1,31 @@
 import "../styles/App.scss";
 import getDataApi from "../services/apiFetch";
 import { useEffect, useState } from "react";
-import { matchPath, Route, Routes, useLocation } from 'react-router-dom';
+import { Route, Routes, matchPath, useLocation } from 'react-router-dom';
+//import PropTypes from 'prop-types';
 import RenderList from "./RenderList";
 import Filters from "./Filters";
 import CharacterDetail from "./CharacterDetail";
+import NotFound from './NotFound';
+
 
 const App = () => {
   // states
   const [charactersList, setCharacterList] = useState([]);
   const [search, setSearch] = useState('');
   const [house, setHouse] = useState('Gryffindor');
+  const [isLoading, setIsLoading] = useState(false);
 
   //getDataApi
   useEffect(() => {
+    setIsLoading(true);
     getDataApi(house).then((data) => {
+      setIsLoading(false);
       setCharacterList(data);
     });
   }, [house]);
 
-  // handleFunctions
+  // handlerFunctions
   const liftingSearch = (value) => {
     setSearch(value);
   }
@@ -27,16 +33,29 @@ const App = () => {
     setHouse(value);
   }
 
-  // searchFilter
-  const filteredList = charactersList.filter((eachChar) => {
-    return search === null ? true : eachChar.name.includes(search)
-  });
+  // renderFunctions
+  const filteredList = charactersList
+    .filter((eachChar) => {
+      return search === null ? true : eachChar.name.toLocaleLowerCase().includes(search.toLocaleLowerCase())
+    })
+    .sort((a, b) => a.name.localeCompare(b.name));
 
   // character detail
   const { pathname } = useLocation();
   const dataUrl = matchPath("/character/:id", pathname);
-  const charId = dataUrl !== null ? dataUrl.params.id : null;
-  const foundChar = filteredList.find((char) => char.id === charId);
+
+  const getFoundChar = () => {
+    if (dataUrl) {
+      const charId = dataUrl.params.id;
+      const foundChar = filteredList.find((char) => char.id === charId);
+      if (foundChar) {
+        return foundChar
+      } else {
+        return {};
+      }
+    }
+  }
+
 
   return (
     <>
@@ -53,18 +72,30 @@ const App = () => {
                   liftingSelect={liftingSelect}
                   house={house}
                 />
-                <RenderList charactersList={filteredList} />
+                <RenderList
+                  charactersList={filteredList}
+                  isLoading={isLoading} />
               </>
             }
           ></Route>
           <Route
             path="/character/:id"
-            element={<CharacterDetail foundChar={foundChar} />}
+            element={<CharacterDetail
+              foundChar={getFoundChar()}
+            />}
           />
+          <Route path="*" element={<NotFound />} />
         </Routes>
       </main>
     </>
   );
 };
+
+// PROPTYPES
+/*App.propTypes = {
+  liftingSearch: PropTypes.func.isRequired,
+  liftingSelect: PropTypes.func.isRequired,
+  charactersList: PropTypes.array.isRequired
+}*/
 
 export default App;

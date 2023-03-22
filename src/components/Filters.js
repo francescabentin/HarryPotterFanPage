@@ -3,9 +3,12 @@ import FilterByHouse from "./FilterByHouse";
 
 const Filters = ({ liftingSearch, search, liftingSelect, house }) => {
 
+    const handleSubmit = (ev) => {
+        ev.preventDefault();
+    }
 
     return (
-        <form>
+        <form onSubmit={handleSubmit}>
             <FilterByName
                 liftingSearch={liftingSearch}
                 search={search}
