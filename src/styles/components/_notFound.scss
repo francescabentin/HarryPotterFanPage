@@ -1,15 +1,21 @@
 @import '../core/variables';
 
 .notFound {
-    background-image: url('../../images/notFound.jpg');
-    width: 100%;
-    height: 500px;
-    background-size: cover;
-    background-size: 50%;
-    background-repeat: no-repeat;
-    background-position: 50%;
+display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    align-items: center;
+}
+.notFound__img {
+    width: 320px;
+    height: 320px;
+    margin-bottom: 100px;
 }
 
-a {
+.notFound__link {
     color: $color-detail;
+    width: 50px;
+        height: 30px;
+        font-size: 30px;
+        margin: 20px;
 }

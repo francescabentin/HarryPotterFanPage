@@ -19,7 +19,7 @@ const CharacterDetail = ({ filteredList }) => {
             {foundChar != null ? (
                 <>
                     <div className="character">
-                        <h2 className="h2">detalle de contacto</h2>
+                        <h2 className="h2">Wizard Details</h2>
                         <img
                             className="character__img"
                             src={foundChar.image}
@@ -30,13 +30,13 @@ const CharacterDetail = ({ filteredList }) => {
                         <p className="character__p">{foundChar.house}</p>
                     </div>
                     <Link className="link" onClick={handleBackHistory} to="/">
-                        Volver
+                        Back
                     </Link>
                 </>
             ) : (
                 <>
                     <div className="noexist">
-                        <h2 className="title">este personaje no exsite</h2>
+                            <h2 className="title">WHO ARE YOU SPYING!!!</h2>
                         <img className="img" src={image} alt="imagen" />
                         <Link className="link" onClick={handleBackHistory} to="/">
                             Volver

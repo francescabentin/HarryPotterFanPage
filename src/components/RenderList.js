@@ -13,7 +13,7 @@ const RenderList = ({ charactersList, isLoading }) => {
     }
 
     const message = () => {
-        return "No characters found matching the search";
+        return <div className="characterNotFound">"No characters found matching the search"</div>;
     }
 
     return (

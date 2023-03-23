@@ -1,9 +1,3 @@
-/*
-    Sizes for media-queries
-*/
-
-$breakpoint-tablet: 768px;
-$breakpoint-desktop: 1024px;
 
 /*
   COLORS
@@ -16,6 +10,5 @@ $color-general: black;
  FONTS
 */
 
-$font-Harry: 'Harry Potter';
-$font-Inter: 'Inter', sans-serif;
-$font-Bluu-Next: 'Bluu Next';
+$font-Harry: 'Ubuntu Mono',
+  monospace;

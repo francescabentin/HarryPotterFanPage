@@ -1,27 +1,18 @@
 @import 'core/variables';
 @import 'core/reset';
-@import 'core/mixins';
 
-/*@font-face {
-    font-family: 'Bluu Next';
-    src: url(../fonts/BluuNext-Bolditalic.otf) format('truetype');
-}
-@font-face {
-    font-family: 'Harry Potter';
-    src: url(../fonts/HARRYP__.TTF) format('truetype');
-}
 
-*/
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&family=Ubuntu+Mono&display=swap');
 
 * {
-    font-family: 'Courier New', Courier, monospace;
+    font-family: $font-Harry;
     color: $color-secondary;
     font-weight: bold;
 }
 .app {
     padding: 20px;
-    min-width: 380px;
-        max-width: 1440px;
+    min-width: 320px;
+        max-width: 1800px;
 }
 
 main {

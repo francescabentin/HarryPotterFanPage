@@ -1,11 +1,24 @@
-@import '../core/variables';
+@import "../core/variables";
 .header {
-    background-color: $color-general;
-    
+background-image: url("../../images/header.jpg");
+    height: 250px;
+    background-size: cover;
+    background-position: 50%;
+    position: relative;
+}
+
+@media screen and (min-width: 768px) {
+    .header {
+        height: 425px;
     }
-    
+}
+
+.header__img {
+    width: 180px;
+
+}
+@media screen and (min-width: 768px) {
     .header__img {
-        width: 1440px;
-        min-height: 180px;
-        max-height: 425px;
+        width: 300px;
+        }
 }

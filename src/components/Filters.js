@@ -29,7 +29,7 @@ const Filters = ({ setSearch, setHouse, setGender, liftingSearch, search, liftin
                 liftingGender={liftingGender}
                 gender={gender}
             />
-                <button className="reset" onClick={handleReset}>reset</button>
+                <button className="reset" onClick={handleReset}>Reset</button>
         </form>
         </section>
     )
