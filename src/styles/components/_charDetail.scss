@@ -1,0 +1,64 @@
+@import '../core/variables';
+
+.div_character {
+    padding-top: 20px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.character {
+    background-color: $color-secondary;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border: solid 6px $color-detail;
+    width: 180px;
+    height: 250px;
+    margin: 0 auto;
+}
+
+.character__img {
+    padding-top: 10px;
+    width: 150px;
+    height: 150px;
+}
+
+.character__p {
+    color: $color-general;
+    font-size: 14px;
+}
+
+.h2 {
+    color: $color-general;
+    text-align: center;
+    font-size: 14px;
+    font-weight: bolder;
+}
+
+
+.link {
+    color: $color-detail;
+    width: 20px;
+    height: 20px;
+
+}
+
+.noexist {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.img {
+    padding-top: 10px;
+    width: 150px;
+    height: 150px;
+}
+
+.title {
+    color: $color-secondary;
+    text-align: center;
+    font-size: 15px;
+    font-weight: bolder;
+}

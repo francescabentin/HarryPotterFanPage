@@ -1,6 +1,3 @@
-// Defaul font-size
-$defaultFontSize: 16;
-
 /*
     Sizes for media-queries
 */
@@ -12,10 +9,9 @@ $breakpoint-desktop: 1024px;
   COLORS
 */
 
-$color-dark-violet: #10141B;
-$color-violet: #6B63B5;
-$color-white: #FFFFFF;
-
+$color-detail: #ffcc00ba;
+$color-secondary: rgb(183, 28, 28);
+$color-general: black;
 /*
  FONTS
 */

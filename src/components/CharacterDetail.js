@@ -1,12 +1,12 @@
-import { Link } from 'react-router-dom';
-import image from '../images/welp.webp';
-import { matchPath, useLocation } from 'react-router-dom';
+import { Link } from "react-router-dom";
+import image from "../images/welp.webp";
+import { matchPath, useLocation } from "react-router-dom";
+import "../styles/components/_eachChar.scss";
 
 const CharacterDetail = ({ filteredList }) => {
-
     const handleBackHistory = () => {
         window.history.back();
-    }
+    };
 
     // character detail
     const { pathname } = useLocation();
@@ -15,24 +15,37 @@ const CharacterDetail = ({ filteredList }) => {
     const foundChar = filteredList.find((char) => char.id === charId);
 
     return (
-        <div>
-            {foundChar != null ?
-                (<> 
-            <h2>detalle de contacto</h2>
-            <img src={foundChar.image} alt="imagen" />
-            <p>{foundChar.name}</p>
-            <p>{foundChar.species}</p>
-            <p>{foundChar.house}</p>
-            <Link onClick={handleBackHistory} to="/">Volver</Link>
-                </>)
-                : (<>
-                    <h2>este personaje no exsite</h2>
-                    <img src={image} alt="imagen" />
-                    <Link onClick={handleBackHistory} to="/">Volver</Link>
-                </>)
-            }
+        <div className="div_character">
+            {foundChar != null ? (
+                <>
+                    <div className="character">
+                        <h2 className="h2">detalle de contacto</h2>
+                        <img
+                            className="character__img"
+                            src={foundChar.image}
+                            alt="imagen"
+                        />
+                        <p className="character__p">{foundChar.name}</p>
+                        <p className="character__p">{foundChar.species}</p>
+                        <p className="character__p">{foundChar.house}</p>
+                    </div>
+                    <Link className="link" onClick={handleBackHistory} to="/">
+                        Volver
+                    </Link>
+                </>
+            ) : (
+                <>
+                    <div className="noexist">
+                        <h2 className="title">este personaje no exsite</h2>
+                        <img className="img" src={image} alt="imagen" />
+                        <Link className="link" onClick={handleBackHistory} to="/">
+                            Volver
+                        </Link>
+                    </div>
+                </>
+            )}
         </div>
-    )
-}
+    );
+};
 
 export default CharacterDetail;

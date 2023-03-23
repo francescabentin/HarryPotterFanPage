@@ -1,9 +1,9 @@
 import { Link } from "react-router-dom";
+import '../styles/components/_notFound.scss';
 
 const NotFound = () => {
     return (
-        <div>
-            <p>NOT FOUND</p>
+        <div className="notFound">
             <Link to='/'>Inicio</Link>
         </div>
     )

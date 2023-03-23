@@ -1,3 +1,5 @@
+import avatar from '../images/avatar.jpg';
+
 const getDataApi = (house) => {
     return fetch(`https://hp-api.onrender.com/api/characters/house/${house}`)
         .then((response) => response.json())
@@ -8,7 +10,7 @@ const getDataApi = (house) => {
                         name: eachObject.name,
                         house: eachObject.house,
                         species: eachObject.species,
-                        image: eachObject.image || `https://via.placeholder.com/210x295/191825/ffffff/?text=${eachObject.name}`,
+                        image: eachObject.image || avatar,
                         id: eachObject.id,
                         gender: eachObject.gender
                     }

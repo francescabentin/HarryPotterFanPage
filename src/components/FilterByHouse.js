@@ -8,9 +8,9 @@ const FilterByHouse = ({ liftingSelect, house }) => {
     }
 
     return (
-        <fieldset className="form__house">
-            <label>Filter by House</label>
-            <select onChange={handleSelectEvent} value={house}>
+        <fieldset className="section__form__house">
+            <label className="section__form__house__label">Select a House</label>
+            <select className="section__form__house__select" onChange={handleSelectEvent} value={house}>
                 <option value='Gryffindor'>Grifindor</option>
                 <option value='Hufflepuff'>Hufflepuff</option>
                 <option value='Slytherin'>Slytherin</option>

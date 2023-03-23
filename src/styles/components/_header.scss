@@ -1,3 +1,11 @@
+@import '../core/variables';
 .header {
-    background-color: black;
+    background-color: $color-general;
+    
+    }
+    
+    .header__img {
+        width: 1440px;
+        min-height: 180px;
+        max-height: 425px;
 }

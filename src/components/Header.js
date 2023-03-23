@@ -1,10 +1,10 @@
 import '../styles/components/_header.scss';
-import image from '../images/backgroundHeader.jpg';
+import image from '../images/harry.jpg';
 
 const Header = () => {
     return (
         <div className='header'>
-            <img src={image} alt="Harry Potter"></img>
+            <img className='header__img' src={image} alt="Harry Potter"></img>
         </div>
 
     )

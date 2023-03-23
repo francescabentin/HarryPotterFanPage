@@ -8,8 +8,8 @@ const FilterByGender = ({ liftingGender, gender }) => {
     }
 
     return ( 
-        <fieldset className="form__gender">
-            <label>Fem</label><input
+        <fieldset className="section__form__gender">
+            <label className="section__form__gender__label">Fem</label><input className="section__form__gender__input"
                 onChange={handleGenderEvent}
                 checked={gender === 'female'}
                 type="radio"
@@ -17,7 +17,7 @@ const FilterByGender = ({ liftingGender, gender }) => {
                 id="female"
                 value="female"
             />
-            <label>Male</label><input
+            <label className="section__form__gender__label">Male</label><input className="section__form__gender__input"
                 onChange={handleGenderEvent}
                 checked={gender === 'male'}
                 type="radio"

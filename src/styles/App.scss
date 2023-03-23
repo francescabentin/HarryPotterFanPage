@@ -13,14 +13,19 @@
 
 */
 
+* {
+    font-family: 'Courier New', Courier, monospace;
+    color: $color-secondary;
+    font-weight: bold;
+}
 .app {
     padding: 20px;
+    min-width: 380px;
+        max-width: 1440px;
 }
 
-.reset {
-    text-transform: uppercase;
-    font-size: 10px;
-    height: 15px;
+main {
+    background-color: $color-general;
 }
 
 

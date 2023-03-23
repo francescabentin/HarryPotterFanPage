@@ -1,45 +1,64 @@
-.form {
-    background-color: rgb(255, 204, 0);
+@import '../core/variables';
+
+.section {
+
+    background-color: $color-general;
+
+    &__form {
+        background-color: $color-detail;
     padding-top: 10px;
     padding-left: 10px;
     font-weight: bold;
-
+    color: $color-secondary;
+        text-align: center;
+    
 &__search {
         border: 0;
         display: inline;
+    
 
     &__input {
-            border-radius: 5px;
-            border-color: antiquewhite;
+    border-radius: 5px;
+        border-color: $color-secondary;
             height: 22px;
             width: 110px;
             margin-left: 1.5px;
+            background-color: $color-detail;
         }
     }
 
   &__house {
-      border: 0;
-      display: block;
+    border: 0;
+        display: block;
+    &__select {
+            border-radius: 5px;
+            border-color: $color-secondary;
+            background-color: $color-detail;
+            margin-left: 40px;
+            color: $color-secondary;
+        }
   }
 
   &__gender {
-      border: 0;
-      display: flex;
+    border: 0;
   }
-  }
-
-.form__house select {
-    border-radius: 5px;
-    margin-left: 2px;
+}
 }
 
-.form__gender label {
+.form__gender__label {
     font-size: 16px;
-margin-right: 3px;
+    margin-right: 3px;
 }
 
-.form__gender input {
+.form__gender__input {
     height: 12px;
     margin-top: 5px;
-    margin-right: 6px;
+    margin-right: 20px;
+}
+
+.reset {
+    text-transform: uppercase;
+    font-size: 10px;
+    height: 15px;
+    background-color: $color-detail;
 }

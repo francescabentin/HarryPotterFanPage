@@ -9,8 +9,8 @@ const FilterByName = ({ liftingSearch, search }) => {
 
 
     return (
-        <fieldset className="form__search">
-            <label>Filter by Name</label> <input className='form__search__input' onChange={handleSearchEvent} value={search} />
+        <fieldset className="section__form__search">
+            <label>Search a character</label> <input className='section__form__search__input' onChange={handleSearchEvent} value={search} />
         </fieldset>
     )
 

@@ -1,0 +1,29 @@
+@import '../core/variables';
+
+
+.character {
+    background-color: $color-secondary;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 5px;
+    border: solid 6px $color-detail;
+    width: 230px;
+    height: 300px;
+}
+
+a {
+    width: 230px;
+    height: 300px;
+
+}
+
+.character__img {
+    padding-top: 10px;
+    width: 200px;
+    height: 200px;
+}
+
+.character__p {
+    color: $color-general;
+}

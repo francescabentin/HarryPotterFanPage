@@ -3,14 +3,20 @@ import FilterByHouse from "./FilterByHouse";
 import FiltersByGender from './FilterByGender';
 import '../styles/components/_filter.scss';
 
-const Filters = ({ liftingSearch, search, liftingSelect, house, liftingGender, gender }) => {
+
+const Filters = ({ setSearch, setHouse, setGender, liftingSearch, search, liftingSelect, house, liftingGender, gender }) => {
 
     const handleSubmit = (ev) => {
         ev.preventDefault();
     }
-
+    const handleReset = () => {
+        setHouse('gryffindor');
+        setGender("");
+        setSearch('');
+    }
     return (
-        <form className="form" onSubmit={handleSubmit}>
+        <section className="section">
+            <form className="section__form" onSubmit={handleSubmit}>
             <FilterByName
                 liftingSearch={liftingSearch}
                 search={search}
@@ -23,7 +29,9 @@ const Filters = ({ liftingSearch, search, liftingSelect, house, liftingGender, g
                 liftingGender={liftingGender}
                 gender={gender}
             />
+                <button className="reset" onClick={handleReset}>reset</button>
         </form>
+        </section>
     )
 }
 

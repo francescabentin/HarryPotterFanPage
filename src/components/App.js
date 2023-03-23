@@ -36,19 +36,13 @@ const App = () => {
   const liftingGender = (value) => {
     setGender(value);
   }
-  const handleReset = (ev) => {
-    ev.preventDefault();
-    setHouse('gryffindor')
-    setGender("");
-    setSearch('');
 
-  }
   // renderFunctions
   const filteredList = charactersList
     .filter((eachChar) => {
       return search === null ? true : eachChar.name.toLocaleLowerCase().includes(search.toLocaleLowerCase())
     })
-    .sort((a, b) => a.name.localeCompare(b.name))
+    //.sort((a, b) => a.name.localeCompare(b.name))
     .filter((eachChar) => {
       return gender === ''
         ? true
@@ -67,12 +61,15 @@ const App = () => {
                 <Filters 
                   liftingSearch={liftingSearch}
                   search={search}
+                  setSearch={setSearch}
                   liftingSelect={liftingSelect}
                   house={house}
+                  setHouse={setHouse}
                   liftingGender={liftingGender}
                   gender={gender}
+                  setGender={setGender}
                 />
-                <button className="reset" onClick={handleReset}>reset</button>
+
                 <RenderList
                   charactersList={filteredList}
                   isLoading={isLoading} />
