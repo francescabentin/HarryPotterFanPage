@@ -1,14 +1,12 @@
 import "../styles/App.scss";
 import getDataApi from "../services/apiFetch";
 import { useEffect, useState } from "react";
-import { Route, Routes, matchPath, useLocation } from 'react-router-dom';
+import { Route, Routes } from 'react-router-dom';
 //import PropTypes from 'prop-types';
 import RenderList from "./RenderList";
 import Filters from "./Filters";
 import CharacterDetail from "./CharacterDetail";
 import NotFound from './NotFound';
-
-
 
 const App = () => {
   // states
@@ -58,21 +56,6 @@ const App = () => {
         : eachChar.gender === gender;
     })
 
-  // character detail
-  const { pathname } = useLocation();
-  const dataUrl = matchPath("/character/:id", pathname);
-  const placeholder = {
-    name: 'NO EXISTE ESTE PERSONAJE',
-  }
-
-  const getFoundChar = () => {
-    if (dataUrl) {
-      const charId = dataUrl.params.id;
-      const foundChar = filteredList.find((char) => char.id === charId);
-      return foundChar ? (foundChar) : placeholder;
-    }
-  } 
-
 
   return (
     <>
@@ -101,7 +84,7 @@ const App = () => {
           <Route
             path="/character/:id"
             element={<CharacterDetail
-              foundChar={getFoundChar()}
+              filteredList={filteredList}
             />}
           />
           <Route path="*" element={<NotFound />} />
