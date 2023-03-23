@@ -10,7 +10,7 @@ const Filters = ({ liftingSearch, search, liftingSelect, house, liftingGender, g
     }
 
     return (
-        <form className="container" onSubmit={handleSubmit}>
+        <form className="form" onSubmit={handleSubmit}>
             <FilterByName
                 liftingSearch={liftingSearch}
                 search={search}

@@ -1,42 +1,45 @@
-// Estilos para el contenedor principal
-.container {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    max-width: 320px;
-    margin: 0 20px;
+.form {
+    background-color: rgb(255, 204, 0);
+    padding-top: 10px;
+    padding-left: 10px;
+    font-weight: bold;
 
+&__search {
+        border: 0;
+        display: inline;
 
-    // Estilos para el primer campo de búsqueda
-    &:first-child {
-
-
-        label {
-            font-size: 15px;
-        }
-
-        input {
-            padding: 3px;
-            border: 1px solid #ccc;
+    &__input {
             border-radius: 5px;
-            font-size: 16px;
+            border-color: antiquewhite;
+            height: 22px;
+            width: 110px;
+            margin-left: 1.5px;
         }
     }
 
-    // Estilos para el segundo campo de selección
-    &:last-child {
-        margin-left: 10px;
+  &__house {
+      border: 0;
+      display: block;
+  }
 
-        label {
-            margin-right: 10px;
-        }
+  &__gender {
+      border: 0;
+      display: flex;
+  }
+  }
 
-        select {
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            font-size: 16px;
-        }
-    }
+.form__house select {
+    border-radius: 5px;
+    margin-left: 2px;
+}
 
-    // Estilos para el tercer campo de género
+.form__gender label {
+    font-size: 16px;
+margin-right: 3px;
+}
+
+.form__gender input {
+    height: 12px;
+    margin-top: 5px;
+    margin-right: 6px;
 }

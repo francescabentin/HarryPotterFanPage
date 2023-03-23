@@ -1,3 +1,5 @@
+import '../styles/components/_filter.scss';
+
 const FilterByName = ({ liftingSearch, search }) => {
 
     const handleSearchEvent = (ev) => {
@@ -7,9 +9,9 @@ const FilterByName = ({ liftingSearch, search }) => {
 
 
     return (
-        <>
-            <label>Buscar por personaje:</label> <input onChange={handleSearchEvent} value={search} />
-        </>
+        <fieldset className="form__search">
+            <label>Filter by Name</label> <input className='form__search__input' onChange={handleSearchEvent} value={search} />
+        </fieldset>
     )
 
 }

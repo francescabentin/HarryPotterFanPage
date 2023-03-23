@@ -13,7 +13,6 @@ const CharacterDetail = ({ filteredList }) => {
     const dataUrl = matchPath("/character/:id", pathname);
     const charId = dataUrl !== null ? dataUrl.params.id : null;
     const foundChar = filteredList.find((char) => char.id === charId);
-    console.log(foundChar);
 
     return (
         <div>
@@ -34,7 +33,6 @@ const CharacterDetail = ({ filteredList }) => {
             }
         </div>
     )
-
 }
 
 export default CharacterDetail;

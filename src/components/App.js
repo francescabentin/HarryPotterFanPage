@@ -7,6 +7,7 @@ import RenderList from "./RenderList";
 import Filters from "./Filters";
 import CharacterDetail from "./CharacterDetail";
 import NotFound from './NotFound';
+import Header from "./Header";
 
 const App = () => {
   // states
@@ -42,8 +43,6 @@ const App = () => {
     setSearch('');
 
   }
-
-
   // renderFunctions
   const filteredList = charactersList
     .filter((eachChar) => {
@@ -56,11 +55,10 @@ const App = () => {
         : eachChar.gender === gender;
     })
 
-
   return (
-    <>
-      <h1 className="title">Harry Potter</h1>
-      <main>
+    <div className="app">
+      <Header />
+      <main className="main">
         <Routes>
           <Route
             path="/"
@@ -74,7 +72,7 @@ const App = () => {
                   liftingGender={liftingGender}
                   gender={gender}
                 />
-                <button onClick={handleReset}>reset</button>
+                <button className="reset" onClick={handleReset}>reset</button>
                 <RenderList
                   charactersList={filteredList}
                   isLoading={isLoading} />
@@ -90,15 +88,8 @@ const App = () => {
           <Route path="*" element={<NotFound />} />
         </Routes>
       </main>
-    </>
+    </div>
   );
 };
-
-// PROPTYPES
-/*App.propTypes = {
-  liftingSearch: PropTypes.func.isRequired,
-  liftingSelect: PropTypes.func.isRequired,
-  charactersList: PropTypes.array.isRequired
-}*/
 
 export default App;

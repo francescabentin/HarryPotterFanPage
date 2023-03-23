@@ -5,7 +5,7 @@ const Reset = (liftingReset) => {
     }
     return (
         <>
-            <button onClick={handleResetEvent}>Reset</button>
+            <button onClick={handleResetEvent}>RESET</button>
         </>
     )
 }

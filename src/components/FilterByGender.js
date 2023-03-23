@@ -1,3 +1,5 @@
+import '../styles/components/_filter.scss';
+
 const FilterByGender = ({ liftingGender, gender }) => {
 
     const handleGenderEvent = (ev) => {
@@ -5,10 +7,9 @@ const FilterByGender = ({ liftingGender, gender }) => {
         liftingGender(value);
     }
 
-    return (
-        <>   
-            <fieldset>  
-            <label>F</label><input
+    return ( 
+        <fieldset className="form__gender">
+            <label>Fem</label><input
                 onChange={handleGenderEvent}
                 checked={gender === 'female'}
                 type="radio"
@@ -16,7 +17,7 @@ const FilterByGender = ({ liftingGender, gender }) => {
                 id="female"
                 value="female"
             />
-            <label>M</label><input
+            <label>Male</label><input
                 onChange={handleGenderEvent}
                 checked={gender === 'male'}
                 type="radio"
@@ -24,8 +25,7 @@ const FilterByGender = ({ liftingGender, gender }) => {
                 id="male"
                 value="male"
             />
-            </fieldset> 
-        </>
+        </fieldset> 
     )
 }
 
